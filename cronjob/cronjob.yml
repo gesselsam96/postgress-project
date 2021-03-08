@@ -10,5 +10,5 @@ spec:
         spec:
           containers:
           - name: connect
-            image: postgres_image
+            image: gesselsam96/postgress-py:tagname
           restartPolicy: OnFailure
