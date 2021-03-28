@@ -3,7 +3,7 @@ kind: CronJob
 metadata:
   name: backup-postgres
 spec:
-  schedule: "*/30 * * * *"
+  schedule: "30 2 * * *"
   jobTemplate:
     spec:
       template:
@@ -12,5 +12,5 @@ spec:
           containers:
           - name: backup-postgres
             image: bitnami/kubectl:latest
-            command: [ "/bin/sh", "-c, "kubectl exec -it postgress-postgresql-0 -- /home/customscripts/backup.bash -n default"]
+            command: [ "/bin/sh", "-c", "kubectl exec -it postgress-postgresql-0 -- /home/customscripts/backup.sh -n default"]
           restartPolicy: OnFailure
